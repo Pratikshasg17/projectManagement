@@ -1,0 +1,144 @@
+<app-navbar></app-navbar>
+<div class="row pt-3 m-0">
+    <div class="col-sm-1">
+    </div>
+    <div class="col-sm-10 border p-3">
+        <form #createForm="ngForm" (ngSubmit)="onCreate(createForm.value)">
+            <div class="text-danger">{{error}}</div>
+            <div class="row m-0">
+                <div class="col-sm-6">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Name:</label>
+                        <input #name="ngModel" ngModel name="name" type="text"  class="form-control" [class.is-invalid]="isSubmitted && name.invalid" id="exampleInputEmail" aria-describedby="emailHelp" required>
+                        <div *ngIf="isSubmitted && name.invalid" class="invalid-feedback">
+                            Please enter name.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Category:</label>
+                        <select required #category="ngModel" ngModel name="category" class="form-select" [class.is-invalid]="isSubmitted && category.invalid" aria-label="Default select example">
+                            <option selected>Select Category</option>
+                            <option value="Quality A">Quality A</option>
+                            <option value="Quality B">Quality B</option>
+                            <option value="Quality C">Quality C</option>
+                            <option value="Quality D">Quality D</option>
+                        </select>
+                        <div *ngIf="isSubmitted && category.invalid" class="invalid-feedback">
+                            Please choose the category
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">End Date:</label>
+                        <input #enddate="ngModel" ngModel name="enddate" type="date" class="form-control" [class.is-invalid]="isSubmitted && enddate.invalid" id="exampledate" aria-describedby="emailHelp" required>
+                    <div *ngIf="isSubmitted && enddate.invalid" class="invalid-feedback">
+                        Please enter date.
+                    </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Priority:</label>
+                        <select required #priority="ngModel" ngModel name="priority" class="form-select" [class.is-invalid]="isSubmitted && priority.invalid" aria-label="Default select example">
+                            <option selected>select menu</option>
+                            <option value="High">High</option>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                        </select>
+                        <div *ngIf="isSubmitted && priority.invalid" class="invalid-feedback">
+                            Please choose the Priority
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Department:</label>
+                        <select required #department="ngModel" ngModel name="department" class="form-select" [class.is-invalid]="isSubmitted && department.invalid" aria-label="Default select example">
+                            <option selected>select menu</option>
+                            <option value="Stratergy">Stratergy</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Quality">Quality</option>
+                            <option value="Maintenance">Maintenance</option>
+                            <option value="Store">Store</option>
+                            <option value="HR">HR</option>
+                        </select>
+                        <div *ngIf="isSubmitted && department.invalid" class="invalid-feedback">
+                            Please choose the Department
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Status:</label>
+                        <select required #status="ngModel" ngModel name="status" class="form-select" [class.is-invalid]="isSubmitted && status.invalid" aria-label="Default select example">
+                            <option selected>select menu</option>
+                            <option value="close">Close</option>
+                            <option value="running">Running</option>
+                            <option value="completed">completed</option>
+                        </select>
+                        <div *ngIf="isSubmitted && status.invalid" class="invalid-feedback">
+                            Please choose the status
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Reason:</label>
+                        <select required #reason="ngModel" ngModel name="reason" class="form-select" [class.is-invalid]="isSubmitted && reason.invalid" aria-label="Default select example">
+                            <option selected>select menu</option>
+                            <option value="Buisness">Buisness</option>
+                            <option value="Dealership">Dealership</option>
+                            <option value="Transport">Transport</option>
+                        </select>
+                        <div *ngIf="isSubmitted && reason.invalid" class="invalid-feedback">
+                            Please choose the reason
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Start Date:</label>
+                        <input #startdate="ngModel" ngModel name="startdate" type="date" class="form-control" [class.is-invalid]="isSubmitted && startdate.invalid" id="exampleInput" aria-describedby="emailHelp" required>
+                        <div *ngIf="isSubmitted && startdate.invalid" class="invalid-feedback">
+                            Please enter date.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Type:</label>
+                        <select required #type="ngModel" ngModel name="type" class="form-select" [class.is-invalid]="isSubmitted && type.invalid" aria-label="Default select example">
+                            <option selected>select menu</option>
+                            <option value="Internal">Internal</option>
+                            <option value="External">External</option>
+                            <option value="Vendor">Vendor</option>
+                        </select>
+                        <div *ngIf="isSubmitted && type.invalid" class="invalid-feedback">
+                            Please choose the type
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Division:</label>
+                        <select required #division="ngModel" ngModel name="division" class="form-select" [class.is-invalid]="isSubmitted && division.invalid" aria-label="Default select example">
+                            <option selected>select menu</option>
+                            <option value="Compressor">Compressor</option>
+                            <option value="Filter">Filter</option>
+                            <option value="Water Heater">Water Heater</option>
+                            <option value="Glass">Glass</option>
+                            <option value="Pumps">Pumps</option>
+                        </select>
+                        <div *ngIf="isSubmitted && division.invalid" class="invalid-feedback">
+                            Please choose the division
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Location:</label>
+                        <select required #location="ngModel" ngModel name="location" class="form-select" [class.is-invalid]="isSubmitted && location.invalid" aria-label="Default select example">
+                            <option selected>select menu</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Calcutta">Calcutta</option>
+                            <option value="Banglore">Banglore</option>
+                        </select>
+                        <div *ngIf="isSubmitted && location.invalid" class="invalid-feedback">
+                            Please choose the location
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <div class="col-sm-1">
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+<div class="row count-container">
+    <div class="col-sm-4">
+        <div class="border border-primary count-box">
+            <h3 class="count-txt">Closed: {{count.close_count}}</h3>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="border border-primary count-box">
+            <h3>Running: {{count.running_count}}</h3>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="border border-primary count-box">
+            <h3>Cancelled: {{count.cancel_count}} </h3>
+        </div>
+    </div>
+</div>
+<br />
+<h4 style="text-align:center"> Bar chart </h4>
+  <div>
+    <div style="width: 700px">
+      <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="mbarChartLabels"
+              [options]="barChartOptions"
+              [colors]="barChartColors"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"
+      ></canvas>
+    </div>
+
+
+  </div>

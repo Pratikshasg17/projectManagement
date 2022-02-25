@@ -1,0 +1,9 @@
+export const BAR: string = 'bar';
+export const CLOSED_PROJECTS: string = 'Closed Projects';
+export const TOTAL_PROJECTS: string = 'Total Projects';
+export const RUNNING: string = 'running';
+export const CLOSE: string = 'close';
+export const CANCEL: string = 'cancel';
+export const BASE_URL: string = 'http://localhost:3004';
+export const LOGIN_ERROR: string = "Error while loging in.";
+export const PROJECT_CREATE_ERROR: string = "Error while creating a project.";

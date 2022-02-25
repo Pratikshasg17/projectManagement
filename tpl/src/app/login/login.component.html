@@ -1,0 +1,26 @@
+<div class="row full-height m-0">
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4 border p-3 vertical-middle">
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+            <div class="text-danger">{{error}}</div>
+            <div class="mb-3">
+                <label class="form-label">Email address:</label>
+                <input #email="ngModel" ngModel name="email" type="email" class="form-control" [class.is-invalid]="isSubmitted && email.invalid" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                <div *ngIf="isSubmitted && email.invalid" class="invalid-feedback">
+                    Please enter email.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Password:</label>
+                <input #password="ngModel" ngModel name="password" type="password" class="form-control" [class.is-invalid]="isSubmitted && password.invalid" id="exampleInputPassword1" required>
+                <div *ngIf="isSubmitted && password.invalid" class="invalid-feedback">
+                    Please enter password.
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <div class="col-sm-4">
+    </div>
+</div>
